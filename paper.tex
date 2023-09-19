@@ -1,0 +1,535 @@
+\documentclass[letterpaper,12pt]{article}
+\usepackage[top=1in, bottom=1in, left=1in, right=1in]{geometry}
+\usepackage{setspace}
+%\usepackage{palatino}
+\usepackage{mathrsfs}
+\usepackage{dsfont}
+\usepackage{amsmath,amsthm,amsfonts,amssymb,amscd}
+\usepackage{eqnarray}
+\newtheorem{proposition}{Proposition}
+\newtheorem{hypothesis}{Hypothesis}
+\newtheorem{lemma}{Lemma}
+\usepackage[pdftex]{hyperref}
+\hypersetup{colorlinks, citecolor=black, filecolor=blue, linkcolor=blue, urlcolor=blue}
+
+
+
+\usepackage{amsmath}
+\usepackage{booktabs} %allowing excel2latex to produce table
+\newcommand{\tabnotes}[2]{\bottomrule \multicolumn{#1}{@{}p{0.95\linewidth}@{}}{\footnotesize #2 }\end{tabular}\end{table}}
+%\setstretch{1.0} % control for line spacing without affecting footnote
+%\usepackage{preamble}
+\usepackage{caption}
+\captionsetup[figure]{font=large,labelfont=large}
+\captionsetup[table]{font=large,labelfont=large}
+\usepackage{float} % allow to place picture at certain place
+\usepackage{graphicx} %allow you to insert pic
+\usepackage[toc,page]{appendix} %allow appendix
+%\usepackage{listings}
+\usepackage{tabularx}
+\usepackage{rotating} % allow regression table to rotate
+
+\usepackage{standalone}
+\usepackage{pdflscape}
+\usepackage{blkarray}
+
+\usepackage{cite}
+\usepackage[round]{natbib}
+
+%\usepackage[authordate,backend=biber,natbib,maxcitenames=5,maxbibnames=9]{biblatex-chicago}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% SPACING
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{titlesec}
+
+\titlespacing*{\section}{0pt}{1.5ex plus 1ex minus .2ex}{0.8ex plus .2ex}
+\titlespacing*{\subsection}{0pt}{1.2ex plus 1ex minus .2ex}{0.8ex plus .2ex}
+
+\titleformat*{\section}{\large\bfseries}
+\titleformat*{\subsection}{\normalsize\bfseries}
+%\titleformat*{\section}{\fontsize{16}{20}\selectfont\bfseries}
+%\titleformat*{\subsection}{\fontsize{13}{17}\selectfont\bfseries}
+
+\title{Local Labor Market and Platform-Based Entrepreneurship\thanks{We thank Annamaria Conti, Florian Ederer, Sarah Jack, Wesley Koo, Ali Mohammadi, Christopher Stanton, and Karl Wennberg for constructive feedback, participants at the NCER Workshop, IBEO Workshop, EGOS Colloquium, and AOM Annual Conference for helpful comments, and Harvard Business School and the Upjohn Institute for financial support.}}
+\author{
+  \vspace{-0.8em} Sam (Ruiqing) Cao \\ \vspace{-0.8em} Stockholm School of Economics \\ \texttt{\protect\href{mailto:sam.cao@hhs.se}{sam.cao@hhs.se}}
+  \and 
+  \hspace{1.8em} \vspace{-0.8em} Yifan Lyu \\ \hspace{1.8em} \vspace{-0.8em} Stockholm School of Economics \\ \hspace{1.8em} \texttt{\protect\href{mailto:yifan.lyu@phdstudent.hhs.se}{yifan.lyu@phdstudent.hhs.se}}
+}
+
+
+\bibliographystyle{apalike-three} 
+
+
+%\author{Sam (Ruiqing) Cao\thanks{Stockholm School of Economics. Email: %\texttt{\protect\href{mailto:sam.cao@hhs.se}{sam.cao@hhs.se}}}}
+\date{}
+
+\doublespacing
+\begin{document}
+
+\maketitle
+
+
+%%%%%%%%%%%%%%%%%%%%
+\section{Introduction}
+
+
+%Platform-based entrepreneurial processes are shaped by available resources that the platform owner shares with all complementors, as well as constrained by requirements of platform governance. Standardization in storefront formats, marketing tools, and customer services interfaces lead to comparable entrepreneurial outcomes. Entrepreneurs manage their access to consumers and processing of transactions through the platform, which also lead to predictable and standardized structures around their business activities.
+
+Platform ecosystems depart from traditional organizational forms and provide new contexts that embed structures of economic relationships between a broad set of actors \citep{mcintyre_multisided_2021,jacobides_towards_2018,kretschmer_platform_2021}. These actors jointly contribute to value creation and capture through innovation and competition \citep{gawer_bridging_2014}. As a primary category of digital platforms, transaction platforms are multi-sided marketplaces that serve as intermediaries between multiple sides of a market that otherwise lack opportunities to interact \citep{rochet_platform_2003}. They particularly bridge gaps between geographically distant individuals and firms and allow them to transact products and services and exchange information \citep{afuah_crowdsourcing_2012,cusumano_business_2019}. Thus, such platforms, including e-commerce and gig economy platforms, can lead to socioeconomic affordances and shape real economic outcomes due to their potential to achieve global scaling and bypass local frictions \citep{bonina_digital_2021}.
+
+Nascent literature examines how platform ecosystems intermediate entrepreneurial activities, structuring a substantial fraction of business activities including market access, customer communications, and payment management \citep{bearson_measuring_2021,eckhardt_open_2018}. The individuals are referred to as platform-dependent entrepreneurs \citep{cutolo_platform-dependent_2021}, who are at the intersection of various contexts and whose actions and outcomes are shaped by incentives both in the platform ecosystem and in local labor markets. To analyze these individuals’ actions and outcomes, factors other than technological affordances within the platform are necessary to consider as important drivers \citep{nambisan_costs_2021}. For example, negative income events such as being laid off from formal employment increase the likelihood of joining a digital platform and conducting gig work as independent contractors \citep{garin_is_2020,huang_unemployment_2020,jackson_availability_2022,laitenberger2023unemployment}.
+
+However, there has been little research into how decisions of individuals to become entrepreneurs on digital platforms in response to external local incentives lead to systematic difference in eventual performance outcomes across different local contexts. There is no conclusive evidence on how the composition of platform-based entrepreneurs depend on local labor market conditions. This paper aims to bridge these research gaps by examining the following research question. How do local labor market conditions, such as job search frictions and local wages, shape the performance outcomes of platform-based entrepreneurs?
+
+
+Labor market frictions are are features of the entire human capital system and constitute contextual conditions that allow firms to sustain competitive advantages by appropriating value from strategic human capital investments \citep{mahoney_market_2013,campbell_bridging_2017,starr_strategic_2018}. Location is a systematic source of frictions that operates at the local labor market level, and constrain the ability of workers to move across jobs \citep{dahl_home_2012,kim_entrepreneurial_2021}. Individuals are typically confined to the local wage sector when they look for job opportunities within a region. However, self-employment entails relative flexibility that extends beyond available local employment opportunities, and digital platforms provide a further institutional setting that aims to replace rules and norms with new ones \citep{bonina_digital_2021}. In contrast, individuals become more dependent on specific technology configurations of the platform ecosystem when they join the platform and participate in entrepreneurial activities regardless of their physical location \citep{nambisan_digital_2017,autio_digital_2018,cutolo_platform-dependent_2021}.
+
+To understand how individuals sort into different options at the intersection of platform ecosystems and local labor markets, we draw on the classical theory of labor turnovers that predict workers move across wage jobs and self-employment in response the perceived value of different earnings opportunities \citep{jovanovic_job_1979,jovanovic_matching_1984}. According to the theory, individuals’ actual earnings from platform-based entrepreneurship should increase in their expected income from being employed in a local wage job, when labor markets are fully efficient with many job openings and substantial turnover. However, labor market frictions are departures from efficient markets, and result in disconnect between local wages and entrepreneurial revenues. We hypothesize that such frictions disproportionately affect workers with particularly high human capital value, who are higher ability individuals that tend to outperform in entrepreneurship \citep{elfenbein_small_2010,chatterji_learning_2016}. This entails two predictions: (1) platform-dependent entrepreneurs outperform when they start businesses in situations where local labor market frictions are higher; (2) local labor market frictions suppress the positive correlation between local wages and entrepreneurial revenues.
+
+We formalize these hypotheses with an analytical model, and empirically test them using data on sales volumes and prices of U.S.-based shop owners in a large online marketplace combined with local labor market characteristics from two official data sources – the Job Openings and Labor Turnover Survey (JOLTS) and the Occupational Employment and Wage Statistics (OEWS) database. Based on these publicly available data sources, we construct measures of annual wages and job vacancy rates at the state level, which defines the local labor market for these platform-based entrepreneurs. Empirically, we find that platform-based entrepreneurs who started their businesses during times when vacancy rate in their local labor market was lower ended up earning higher sales revenues. Among those who started their businesses when vacancy rate was higher, the relationship between local wage and entrepreneurial revenue became significantly more positive. Such variation in entrepreneurial performance across different founding year local labor market conditions are likely due to systematic differences in entering sellers' quality. Exploring the potential mechanisms that led to these results, our empirical evidence points to explanations suggesting that different types of sellers (e.g., presence on an external platform such as Instagram, and having a business partner) enter the platform in response to local labor market conditions. These empirical results confirm our theory and hypotheses around local labor market frictions and platform-based entrepreneurial performance. 
+
+While prior research on regional factors shaping entrepreneurial success in the U.S. almost solely focus on registered businesses, the measurement fails to capture early-stage entrepreneurial activities as well as new forms of entrepreneurial processes intermediated by platform ecosystems. There are a massive number of online business owners, independent creators, and app developers around the world who generate hundreds of billions of dollars of revenues combined. They remain understudied despite their importance as drivers of vibrant and diverse entrepreneurial ecosystems \citep{shane_promise_2000,aldrich_unicorns_2018,cullen_outsourcing_2021}. This paper aims to shed light on the tradeoffs facing these entrepreneurs across different earnings opportunities when platform ecosystems create new contexts for operating entrepreneurial businesses.
+
+The paper’s main contribution is to expand our understanding of the determinants of outcomes of platform complementors who create entrepreneurial businesses within the platform ecosystem \citep{cullen_outsourcing_2021}. The phenomenon we study sits at the intersection of two non-overlapping literatures on platform affordances \citep{gawer_bridging_2014,mcintyre_multisided_2021} and local labor market frictions \citep{campbell_rethinking_2012,starr_strategic_2018}, as individuals react to opportunities both within the platform ecosystem and outside the platform in the local market. Our findings confirm that offline economic conditions are non-negligible drivers of the performance of business owners who are complementors in a platform ecosystem.
+
+
+
+\section{Theory Development}
+
+\subsection{Entrepreneurship in Platform Ecosystems and Local Labor Market Conditions}
+
+Digital platforms constitute important contexts in which individuals can start businesses and engage in entrepreneurial activities, through providing products and services to a broad base of both local and non-local customers. While existent literature on local entry conditions and entrepreneurial performance primarily focus on innovation and R\&D intensive ventures \citep{conti2021lowering,bias2022great,hacamo_forced_2022}, how local labor market conditions shape the processes and outcomes of platform-based entrepreneurship remain somewhat underexplored.
+
+Platform-based entrepreneurs are a particular type of entrepreneurs who may exhibit different entry and exit patterns in response to local labor market conditions, relative to founders of high-tech and capital-intensive startups. They include online shop owners (e.g., Etsy), content producers (e.g., YouTube), and app developers (e.g., Apple and Android) among others. Despite being relatively small at the level of the individual, these entrepreneurs account for a large amount of total revenues and affect the livelihood of billions of individuals worldwide \citep{aldrich_unicorns_2018,bonina2021digital}. These entrepreneurs are highly dependent on the platforms that host their entrepreneurial activities \citep{cutolo_platform-dependent_2021}, which give rise to distinct eco-systems that shape and constrain the processes of entrepreneurship. 
+
+
+Digital technologies and platform ecosystems constitute new contexts shaping entrepreneurial decisions and outcomes \citep{nambisan_digital_2017,eckhardt_open_2018,nambisan_costs_2021}. Platform-based entrepreneurs play the double role of both being business owners that can make choices to improve their well-being through changing their product and marketing strategies, and being complementors of a particular platform which governs the activities within it to ensure that they bring value to (rather than distract from) the platform's core business. In exchange for access to a wide base of customers through the platform, the entrepreneurs must conform to the platform's various governance mechanisms, such as paying listing and transaction fees, standardizing product display to comply with platform rules, and subscribing to various advertising and payment programs mandated by the platform. In this sense, the processes and outcomes of these entrepreneurs are shaped and constrained by platform governance.
+
+
+
+On the other hand, platform-based entrepreneurial ecosystems enable less geographically bounded entrepreneurial processes and reduce the costs of communication and barriers to coordination across long geographic distances. Platforms ecosystems enable geographically dispersed individuals to coordinate value creation in diverse location across long distances \citep{cennamo_platform_2013,sussan_digital_2017,jacobides_towards_2018}. The entrepreneurial dynamics within the platform ecosystems are thus less sensitive to local contexts \citep{haveman_spatial_2014,autio_digital_2018}. Entrepreneurs that depend on platforms to conduct businesses are less dependent on local resources. For example, while there are large rural-urban gaps in entrepreneurial activities embedded within local business ecosystems \citep{braesemann_icts_2022}, platform ecosystems provide resources such as access to non-local markets, standardized tools for customer service provision, digital advertising and payment processing \citep{forman_how_2005,koo_platform_2021}. Therefore, relative to localized business ecosystems, platforms enable entrepreneurial activities to move beyond the constraints of geographic boundaries by conducting businesses digitally and reaching remote customers \citep{nambisan_digital_2017,autio_digital_2018}. The entrepreneurial processes on the platform are relatively insulated from demand fluctuations in local product markets, relative to physically embedded businesses that primarily serve local customers.
+ 
+
+
+However, local market conditions are push factors that shape the financial incentives for motivating different types of individuals to become entrepreneurs on the platform. Financial incentives motivate workers’ choices among earnings opportunities available to them \citep{autio_entrepreneurial_2014,berkhout_entrepreneurship_2016,burton_careers_2016}. These opportunities include employment options in the wage sector and income-generating activities through self-employment. Individuals’ work histories often involve a mixture of self-employment and wage jobs, with common transitions at some point in the career between the two \citep{ferber_long-term_1998,folta_hybrid_2010,dillon_self-employment_2017,ganser-stickler_sitting_2022}. Not only do the potential payoffs of entrepreneurship affect decisions to become entrepreneurs, but also earnings opportunities with local employers available to the individuals are crucial to shaping transitions into and out of entrepreneurship.
+
+%As digital platforms lead to new earnings opportunities, individuals otherwise lacking alternative income options in the local labor market or other local resources and social capital may disproportionately join platform-based entrepreneurial ecosystems. 
+
+The emergence of digital platforms gave rise to new options for individuals to earn incomes. The literature on earnings opportunities enabled by digital platforms often focus on two-sided markets where ``gig workers'' conduct independent contracting work for employers intermediated by the platform \citep{abraham_measuring_2017,collins_is_2019,katz_understanding_2019,abraham_what_2022}. Individuals who lose their jobs or are otherwise subject to an adverse income shock are particularly likely to resort to digital platforms and become gig workers \citep{garin_is_2020,huang_unemployment_2020,laitenberger2023unemployment,jackson_availability_2022}. While past empirical research has agreed upon patterns of entry into and exit from platform-based earning opportunities, there has been much less consensus about whether these opportunities yield systematically more or less productive outcomes in response to changes in local conditions. Similarly, there has been scant empirical evidence on how local labor market conditions shape the aggregate quality of entrants into platform-based entrepreneurship.
+
+The body of literature that studies the relationship between economic downturns and entreprneurial performance show diverging results under different contexts \citep{conti2021lowering,hacamo_forced_2022,steffens2023asymmetric}. One view of entrepreneurship through self-employment is that it is merely stop-gap activity for individuals who need alternative income source after being laid off from formal wage employment \citep{evans_small_1990,kaiser_is_2011}. In this view, self-employed individuals are less productive on average relative to those who remain employed, and thus businesses started by self-employed individuals during an economic downturn should have lower quality on average.
+
+An alternative view is that self-employment and separations from wage jobs do not necessarily reflect low productivity \citep{yagan_employment_2019,koch_career_2021}. Instead, a shortage of jobs in the local labor market results in an excess supply of high-quality labor. These individuals end up performing better as entrepreneurs relative to those who started businesses in the context of less constrained or local labor markets. For example, ventures started by top college graduates during economy-wide recessions are more likely to survive, innovate, and receive venture funding than those started by individuals with similar educational backgrounds during times other than recessions \citep{hacamo_forced_2022}. 
+
+More generally, such a situation arises due to the presence of labor market frictions, which are deviations from a perfectly competitive labor market where workers are matched to jobs and earn wages equal to their marginal productivity. Labor market frictions introduce rent capture opportunities by employers \citep{mahoney_market_2013,campbell_bridging_2017}, which can lead to competitive advantages by constraining the mobility of workers. For example, a thin labor market with few available job opportunities and high costs to moving across jobs \citep{campbell_bridging_2017} are both sources of labor market frictions. These frictions can operate at the level of the entire labor market, and lead to individuals with high productivity being left out of the wage sector or settling in jobs for which they are overqualified. These individuals would have been employed at a higher wage if local labor markets were less frictional. 
+
+
+Local labor market conditions and the extent to which individuals can move freely into wage jobs shape the sorting of individuals into platform-dependent entrepreneurship. Individuals are typically confined by their location to identify job opportunities. Hence, the labor market for these individuals operate at the regional level. In some local labor markets, there are more job openings available to be filled than in other locations. In the language of labor economics theory, slacker labor markets have more scarce job opportunities and an excess supply of high-quality workers, which is typical for rural areas \citep{breza_labor_2021} and periods of economic recessions \citep{michaillat_matching_2012}. In such labor markets, jobs are rationed and self-employed individuals have on average superior productivity relative to those left out of the wage sector in competitive labor markets. This has direct implications for systematic performance variation in platform-based entrepreneurship across geographic locations. We formalize this idea with an analytical model, and derive the resulting key hypotheses for empirical testing in the next section.
+
+
+
+
+
+\subsection{Labor Market View of Entrepreneurial Transition as Choice Between Earning Opportunities: A Formal Model}
+
+In the analytical model, we capture labor market frictions with a parameter $\mu$, which characterizes the probability that an individual is offered a job after searching for work in the local labor market. In more frictional markets, this probability $\mu$ is lower (and strictly less than 1). Obviously, $\mu$ increases in the availability of job openings in the local labor market.
+
+%Only have two hypotheses (same as previous draft).
+
+%Show Main equation for H1 and H2. Derivation in the appendix.
+
+%The explain the intuition (and some other consequences of these results, such as reversal in relationship between wage and revenue).
+
+The model assumes the existence of two types of individuals with different ability levels $\theta\in\{H,L\}$ and $H>L$. The screening technology is perfect so potential employers can observe worker type accurately and without uncertainty, and decide whether or not to extend a job offer. Each individual can conduct job searches at zero cost, which may result in a job offer with probability $\mu$ if they are the high ability type. The high ability type ($\theta=H$) will be given a job offer at wage rate $w$ and the low ability type ($\theta=L$) does not receive a job offer despite searching. 
+%Low ability types ($\theta=L$) do not receive wage offers despite searching. 
+
+
+Each individual $i$ has an alternative option of becoming self-employed, and earn an entrepreneurial revenue of are $y^{\theta}_{i}\geq 0$. We assume that $y^{\theta}_{i}$ does not depend on location to simplify matters, because platform-based entrepreneurial performance are relatively insulated from local market demand. The average entrepreneurial performance of high ability individuals $y^{H}=E[y^{H}_{i}]$ is higher than the average entrepreneurial performance of low ability individuals $y^{L}=E[y^{L}_{i}]$. Suppose there is no uncertainty in the entrepreneurial revenue of each person $i$ of type $\theta$ at the individual level. That is, the individual $i$ knows that their earning from entrepreneurship would be $y^{\theta}_{i}$ if they choose this option. Also assume that revenue for high ability individuals are normally distributed with $y^{H}_{i}\sim N(y^{H},\sigma^{2})$. If the individual chooses to be an entrepreneur, they must reject the job offer and hence not earn wages in the local labor market.
+
+We summarize the job search process and individuals' subsequent choice between entrepreneurship and local employment as follows. We examine the pool of potential entrepreneurs who have an inclination to start businesses, and will always become entrepreneurs if they cannot obtain a local wage job (that is, they cannot forgo both options). We denote the outcome of an individual's job search by $s_{i}$, a binary indicator equal to $1$ if the job search resulted in a wage offer and $0$ otherwise. Hence, If individual $i$ is a high ability type ($\theta_{i}=H)$, then $s_{i}=1$ with probability $\mu$ and $s_{i}=0$ with probability $1-\mu$. Low ability types do not receive a positive wage offer regardless of searching. We denote the eventual observation of entry into entrepreneurship by $d_{i}\in\{0,1\}$ for individual $i$, which depends on rational decisions to maximize income upon considering all the options available to them. This means that $d_{i}=1$ if and only if the individual does not receive a wage offer ($s_{i}=0$) or receives a job offer paying a lower amount than entrepreneurial revenue ($s_{i}=1$ and $y^{\theta}_{i}\geq w$). It follows immediately that low types always become entrepreneurs and high types become entrepreneurs with probability $Pr\left(d^{H}_{i}=1 \vert \mu, w\right) = (1-\mu) + \mu Pr(y^{H}_{i}\geq w)$.
+%$Pr\left(d^{L}_{i}=1 \vert \mu, w\right) = 1$
+
+Denote the fraction of high ability types among potential entrepreneurs as $\alpha$. There are three different scenarios of an individual $i$ who becomes an entrepreneur ($d_{i}=1$). In the first scenario, the individual is low ability type ($\theta_{i}=L$) and thus is never employed. In the second scenario, the individual is high ability type but chances have it that cannot get a job at the current time ($\theta_{i}=H$ and $s_{i}=0$). In the third scenario, the individual is high ability type and they are offered a job at the current time ($\theta_{i}=H$ and $s_{i}=1$). We can show that the observed average entrepreneurial revenue is described by the following equation (see Appendix XX for the mathematical proof), where $\phi(z)$ and $\Phi(z)$ are the probability density function and the cumulative density function for the standard normal random variable $z\sim N(0,1)$.
+
+\begin{eqnarray} \label{eq:rev}
+    E[y_{i}\vert d_{i}=1] &=& y^{H}-\frac{(1-\alpha)(y^{H}-y^{L})-\alpha\mu\sigma\phi\left(\frac{w-y^{H}}{\sigma}\right)}{1-\Phi\left(\frac{w-y^{H}}{\sigma}\right)\alpha\mu}
+\end{eqnarray}
+
+Based on this model and the formula for expected entrepreneurial performance above, we can analyze the impact of a change in local labor market frictions parametrized by $\mu$ on both the expected entrepreneurial performance on the platform among entrants and its relationship with wage rate $w$.
+
+\subsection{Local Labor Market Frictions and Platform-Based Entrepreneurial Performance}
+
+Based on Equation \ref{eq:rev}, we can derive the effect of an increase in $\mu$ on the outcome. This leads to the following proposition (see Appendix XX for the full proof).
+
+%We investigate how the observed aggregate entrepreneurial performance changes when two sets of local labor market conditions vary across time and locations: (1) the probability of being successfully matched to a job $\mu$, which is an inverse measure of local labor market frictions, and (2) the prevailing local wage $w$. Variation in both of these conditions can lead to changes in the proportion of different types of scenarios underlying entrepreneurship.
+
+\begin{proposition} \label{prop:h1}
+When $\Delta y=y^{H}-y^{L}$ is sufficiently large, there exists a threshold wage $w^{*}<y^{H}$ such that whenever $w\geq w^{*}$, an increase in the probability of successful job match $\mu$ in the local labor market leads to a decline in observed average entrepreneurial performance.
+\end{proposition}
+
+In the context of platform-based entrepreneurship, the average revenue is typically much lower than earnings from a full-time wage job, which satisfies the required condition for the proposition ($w>y^{H}$). The result in this proposition emerges because the high ability type becomes more constrained when $\mu$ decreases, and therefore pursue the entrepreneurial option and subsequently improve the average performance across the cohort of individuals who become entrepreneurs at the same time. In this case, a thin labor market leads to job rationing, and deviations from perfect competition that result in opportunities of rent creation and rent capture by firms \citep{mahoney_market_2013,campbell_bridging_2017}. This should also imply higher entrepreneurial performance if individuals start their own businesses, as it spurs the entry of superior quality entrepreneurs. 
+
+There is substantial heterogeneity in frictions across urban labor markets in different locations. With a higher state-level vacancy rate, defined by the number of job openings to be filled as a fraction of labor force, it is easier for local individuals to find wage employment. A relatively thinner local labor market has a smaller number of alternative employers, and hence hence the vacancy rate is lower in such markets. Labor market frictions prevent efficient matches between workers and employers from being formed.
+
+On the other hand, such frictions only operate at the local labor market level, and do not directly affect performance outcomes of platform-dependent entrepreneurs. The platform intermediates the entrepreneurial activities and processes, which rely primarily on interactions among actors within the platform ecosystems, which may span geographic boundaries and reach customers in non-local and distant areas. 
+
+%When platform-dependent entrepreneurs live in areas with a slack local labor market, they should exhibit on average superior performance after they enter the platform ecosystem and become complementors by starting new online businesses. 
+Hence, compared to voluntary entrepreneurs, those who started businesses in more constrained situations where local job opportunities were scarce are more likely to start successful businesses. This mechanism can extend more generally to the platform-dependent entrepreneurs, who achieve superior performance in their platform-based businesses when the labor market frictions are more substantial in their location of residence. Hence, we propose:
+\begin{hypothesis}
+Within the same platform ecosystem, the platform-dependent entrepreneur generates a higher revenue if the local job vacancy rate was lower at the time when the entrepreneur started their platform-dependent business.
+\end{hypothesis}
+% Platform-based entrepreneurial businesses perform worse on average when they were started in a local labor market with higher vacancy rate.
+
+\subsection{Local Labor Market Frictions and the Relationship Between Local Wage and Platform-Based Entrepreneurial Performance}
+
+Based on Equation \ref{eq:rev}, we can characterize the relationship between local wage $w$ and expected revenue among platform-based entrepreneurs as follows. 
+\begin{equation}
+\bar{y}_{w}'(w,\mu) = \frac{\partial E\left[y_{i}\vert d_{i}=1\right]}{\partial w} = \frac{\alpha\mu\phi\left(\frac{w-y^{H}}{\sigma}\right)\xi(w,\mu)}{\left[1-\Phi\left(\frac{w-y^{H}}{\sigma}\right)\alpha\mu\right]^{2}}
+\end{equation}
+
+Where
+$$\xi(w,\mu) = -\frac{1}{\sigma}(1-\alpha)(y^{H}-y^{L})-\frac{w-y^{H}}{\sigma}\left(1-\Phi\left(\frac{w-y^{H}}{\sigma}\right)\alpha\mu\right)+\phi\left(\frac{w-y^{H}}{\sigma}\right)\alpha\mu$$
+
+This leads to the following proposition (see Appendix XX for the full proof).
+\begin{proposition} \label{prop:h2}
+    There exists a threshold wage $w^{*}<y^{H}$ such that whenever $w\geq w^{*}$, an increase in $\mu$ raises $\bar{y}_{w}'(w,\mu)$.
+\end{proposition}
+
+The result in this proposition emerges because as $\mu$ increases, the fraction of entrepreneurs that \textit{choose} to become entrepreneurs rather than being forced to do so due to not being matched to a local wage job becomes larger. Therefore, lowering labor market frictions (or higher vacancy rate) is associated with stronger convergence between local wage and observed entrepreneurial revenue across entrants.
+
+In the classical theory of labor turnovers, workers move between wage jobs and self-employment in response to changes in the perceived value of different earnings opportunities \citep{jovanovic_job_1979,jovanovic_matching_1984}. If individuals can move freely and have perfect knowledge of the revenue potential of their platform-dependent businesses, they should be more likely to choose the higher-earnings option whether it is an offer a local employer or anticipated revenues from entrepreneurship. When an individual is offered a higher wage by a local employer, they become less likely to engage in platform-dependent entrepreneurship unless they expect to earn even more on the platform. Hence, in an efficient market without frictions, aggregate earnings from platform-dependent entrepreneurship should increase in prevailing local wage.
+
+
+Established findings in research on urban agglomeration suggest that wages grow faster in dense urban areas, because workers change jobs more frequently when the local labor market is more competitive \citep{wheeler_cities_2006,finney_effect_2008,cullen_outsourcing_2021}. Over 4 million workers in the United States change jobs per month, and most of these job changes lead to real wage growth \citep{kochhar_majority_2022}. Through job changes, workers attain better matches to employers more quickly than in slacker labor markets. More churn in the local labor markets leads to faster convergence in the returns to different earnings opportunities. This mechanism implies that local wages and average platform-based entrepreneurial earnings are more likely to converge in efficient labor markets with high vacancy rates, but labor market frictions dampen the association between them within the same location. 
+
+
+However, labor market frictions can lead to deviations from efficiency where workers can move freely between wage jobs and platform-dependent entrepreneurship in response to earnings incentives. When job opportunities are scarce and workers are less likely to find appropriate matches to employers despite searching, the expected earnings and marginal productivity diverge. In more frictional labor markets with fewer vacancies and less frequent job churns, frictions disproportionately affect local earnings opportunities of workers whose human capital value is particularly high. These workers turn to self-employment through the platform and earn higher revenues. Hence, the performance of platform-based entrepreneurs in such markets are relatively disconnected from local wage dynamics, and labor market frictions can suppress the convergence between local wage and entrepreneurial revenue.
+\begin{hypothesis}
+The job vacancy rate in the local labor market positively moderate the association between local wages and average revenues of the platform-dependent entrepreneurs within the same platform ecosystem.
+\end{hypothesis}
+%Hence, the correlation between average revenues of platform-dependent entrepreneurs and local wages should increase in vacancy rate in the local labor market, which measures local labor market frictions. We propose:
+%The relationship between platform-based entrepreneurial revenue and local wage is more positive for businesses started in a local labor market with higher vacancy rate.
+
+
+\section{Data and Measures}
+
+\subsection{Data Sources}
+The empirical analyses focus on Etsy Marketplace, a large global e-commerce platform where millions of entrepreneurs from across the world open their online shops and sell handcrafted products to customers. In 2022, the platform had around 7.5 million sellers globally, which served 100 million buyers and generated about \$12 billion in total transactions. Etsy Marketplace differentiates itself from other e-commerce platforms such as eBay and Amazon by emphasizing its craft-based ethos embodied in its mission to ``keep commerce human''. The production processes involved in selling craft goods are usually labor intensive.
+
+The focal unit of analysis is an individual entrepreneur, who owns a shop in the Etsy Marketplace. We refer henceforth to these individuals as shop owners or platform-dependent entrepreneurs (PDEs). They are typically artistically inclined, and use their design skills to create unique craft goods and sell them through the platform. According to Etsy's annual report and internal research, about 80\% of sellers are women, and the average seller age is about 39 years. In addition, almost all Etsy businesses are run from home, and over 90\% are run by a sole owner.
+
+
+%Among the active sellers, about 97\% run the business from home and about 91\% are the only owner of their shops. For about 51\% of the active sellers, self-employment is their only source of income. 
+
+To conduct the empirical analyses, we collect data from Etsy's public website at a quarterly frequency. Our primary data set consists of quarterly observations of Etsy sellers, with variables including sales volume, average product price, and number of listed items. For each seller, we also observe cross-sectional information about their location, founding year, product category, external websites (e.g., Instagram), production partner, and other shop members if any. Locations are reported on the online storefronts at the city level, which we then map into states using the Google Places API. Shops are grouped into three categories according to the types of products they primarily offer: home and living, accessories, and clothing.
+
+
+We supplement this data with two public data sources made available by the U.S. government -- the Job Openings and Labor Turnover Survey (JOLTS) and the Occupational Employment and Wage Statistics (OEWS). Both data sources can be directly accessed from the U.S. Bureau of Labor Statistics website (\url{https://www.bls.gov}). From the JOLTS data, we measure job vacancy rate which is the (inverse) proxy for labor market frictions. Vacancy rate is reported every months as the ratio of the number of job openings to labor force at the state level. From the OEWS data, we measure the average annual wage across all occupations. For both data sources, we aggregate the relevant variables to the state-year level.
+
+
+%However, almost 90\% and hence most of the employment in an average state are due to urban employers. The urban population is larger than rural population in all states except for Mississippi, Montana, Vermont, and Wyoming. Hence, the quits rate and vacancy rate variables primarily reflect urban labor market activities within each state. We discuss how the local labor market frictions variables are defined and measured in Section 3.3.
+
+%To determine the relevant local labor market for each seller, we use qualitative evidence on the education history and work experience of typical shop owners on the focal platform marketplace. This allows us to narrow down the characteristics such as industry and size of potential employers that are likely to employ the individuals in our sample. We described the definition and measurement of prevailing local wage in more detail in Section 3.4.
+
+\subsection{Variables}
+
+\textbf{Performance Outcome.} We measure the performance outcome as the logarithm of estimated seller revenue at a quarterly frequency. Estimated revenue is calculated as the product of quarterly sales volume and average price across listed items at the beginning of the time period. Due to data availability limitations, we do not observe the exact items sold, and hence rely on the average price across all items and total shop-level sales volume to estimate the revenue. In addition, we account for differences in price levels across locations by converting the estimated revenue into real dollars, by diving the nominal revenue by the sate-level price deflator.\footnote{We obtained the regional price deflators from Table 2 of the U.S. Bureau of Economic Analysis report by Figueroa (2022). For each state, the price deflator is expressed as a percentage of 2012 (base-year) national personal consumption expenditure price index.}
+
+\textbf{Vacancy Rate in the Founding Year.}. We measure (inverse) local labor market frictions using quarterly vacancy rate at the state level. Vacancy rate is calculated as the ratio of the number of job openings to the size of the labor force. Job openings include all posted positions that are open and not filled by the last business day of the measurement time period. A higher vacancy rate is associated with a tighter labor market in which it is easier to become matched to a local job conditional on required level of expertise and wage rate. The raw data (JOLTS) measures monthly vacancy rate, but we aggregate it to the yearly level to measure the average vacancy rate during the year in which an Etsy-based business was founded.
+
+\textbf{Local Wage in the Founding Year.} The U.S. Bureau of Labor Statistics makes available the annual employment and wage estimates for different occupations through the Occupational Employment and Wage Statistics (OEWS) program. The raw data (OEWS) provides the annual occupational wages for each state. We use the overall annual wage at the state level as the main measure for local wage, and conduct robustness checks using annual wage for art and design occupations (SOC code $27-1000$). These occupations are most relevant for the entrepreneurs observed in the Etsy sample, because they require skills in art and design that are often involved in craft goods offered by Etsy sellers. We account for differences in price levels across locations by converting the estimated revenue into real dollars, by diving the nominal revenue by the sate-level price deflator.
+
+
+%The relevant labor market of platform-dependent entrepreneurs in the sample should consist of employers that are likely to hire the types of individuals that become shop owners in the focal platform marketplace. We collected the education history and employment experience from LinkedIn, for a few hundred randomly selected shop owners who are complementors of the focal platform. These individuals are primarily self-employed as artists or designers or work for small firms in the art industry. 
+
+
+
+
+\textbf{Other Variables.} We measure a few seller characteristics that are cross-sectional and describe them as follows. Each seller's \textbf{\textit{primary category}} is one of the following categories in which the majority of its products are classified: home and living, accessories, and clothing.\footnote{The home and living category also includes bath and beauty products. The accessories category also includes jewelry. The clothing category also includes bags, purses, and shoes.} \textbf{\textit{External website}} is a binary indicator of whether the seller links their Etsy storefront to at least one other platform (such as Twitter, Facebook, Pinterest, or Instagram). \textbf{\textit{Solo}} is a binary indicator equal to $1$ if the seller either does not list any shop members or lists only one individual as a shop member, equal to $0$ if at least two individuals are listed as shop members. \textbf{\textit{Number of items}} is the number of products listed upon the initial observation. \textbf{\textit{Average price}} is the average price of all product listings upon the initial observation. Both number of items and average price change over time, but we use the first observed quantities of these variables to capture the initial product scope and pricing strategy of the seller. Finally, a crucial control variable is the size of the local labor market, measured by the \textbf{\textit{total labor force}} in the founding year within the state where the seller is located.
+
+\subsection{Sample Description}
+The final analysis sample consists of observations in 2022Q4 of 207,674 sellers located within the United States, which is the primary market of Etsy. We only include sellers for which the founding year is available, because our empirical analyses primarily relies on identifying the labor market conditions \textit{upon the time that the business was started on Etsy}. The sample includes a large number of sellers in every U.S. state including the District of Columbia. In addition, we only include observations of a seller when they are active (i.e., we exclude sellers that have temporarily or permanently closed their Etsy business in the entire duration of 2022Q4). We apply the follow additional criteria for a seller to be included in the final analysis sample. First, the seller must have been active on the platform since no later than the first quarter of 2022. This is to ensure that the observed performance is measured a sufficiently long time since the business was initially established (i.e., at least a year), so that the revenues have stabalized when we observe the sellers' performance. Second, we only include observations where the seller is active on the platform. Third, We only include sellers who started their businesses on Etsy after the Great Recession (i.e., after 2009). Finally, we only include sellers located in counties classified as urban areas. We exclude rural sellers because the analyses focus on local labor markets, which are typically defined at metro area levels.
+
+% accounting for about 60\% of overall sellers on the platform
+% 1,264,373 quarterly observations of 262,465 sellers 
+ 
+Table 1 reports the descriptive statistics on the final analysis sample. The distribution of quarterly revenue is highly skewed. The average quarterly revenue is \$2,956 and the median is only \$102 in constant 2012 dollars. About 34\% of the observed quarterly revenues are zero. On the other hand, the average yearly vacancy rate in the local labor market at the state level is 4.1\%, which fluctuates with a standard deviation of 1.3\%. The overall annual wage has a median of \$44,328 and a standard deviation of \$5,090 in constant 2012 dollars. Compared to the overall wage, the wage for art and design occupation has a slightly lower median and much wider spread. The median size of the labor force is about 5 million.
+
+
+\begin{center}
+    [ Insert Table 1 here ]
+\end{center}
+
+The descriptive statistics also contain sellers' fixed characteristics. The median seller lists 23 product items with an average price of \$24. Both total items and price are positively correlated with revenue. Around 59\% of the sellers listed at least one external platform (among Twitter, Facebook, Pinterest, and Instagram). 87\% of the sellers are sole owners of their Etsy businesses. The home and living, accessories, and clothing categories comprise about 58\%, 23\%, and 19\% of overall sellers, respectively. The average seller tenure is 4.6 years in the sample, with a standard deviation of 3.2 years.
+
+Table 2 summarizes the pairwise correlations between the variables. External platform is positively correlated with revenue (0.04) and negatively correlated with vacancy rate (-0.09). Being a solo owner is negatively correlated with revenue (-0.09) and positively correlated with vacancy rate (0.08). There appears to be no correlation between seller category and revenue.
+
+\begin{center}
+    [ Insert Table 2 here ]
+\end{center}
+
+\section{Entrepreneurial Performance and Labor Market Frictions}
+
+
+\subsection{Estimation Approach} \label{sec:h1}
+
+To evaluate the relationship between local labor market vacancy rate and entrepreneurial performance among sellers on the focal platform, we estimate the model in Equation 1 below. The primary outcome variable is log quarterly revenue (in constant 2012 dollars) of seller $s$. We conduct mechanism tests by replacing the outcome variables with fixed seller characteristics such as external platform, sole owner, and initial product strategy (scope and pricing).
+\begin{equation} \label{eq:h1}
+LnQrtlyRevenue_{s}=\alpha_{0} + \alpha_{1}VacancyRate_{s}+State FEs+ StartYear FEs+X_{s}+\epsilon_{s}
+\end{equation}
+
+The main regressor \textit{VacancyRate} is the vacancy rate at the time that seller first established the business in the reported shop location at the state level. The coefficient $\alpha_{1}$ estimates the average percentage change in quarterly seller revenue in response to a 1\% increase in local labor market vacancy rate. The baseline model controls for state fixed effects, founding year fixed effects, and seller category fixed effects.
+
+We additionally assess the robustness of the estimated effects using different models with various control variables measuring labor market conditions in the founding year and fixed seller characteristics. These additional controls include log total labor force and log overall wage at the state level, log number of product items, log average price, and indicators for external platform and sole owner. All regression specifications cluster standard errors at the state level which defines a local labor market. 
+
+
+\subsection{Results}
+
+Table 3 reports the regression results from estimating the impact of local labor market vacancy rate in founding year on eventual performance of platform-based entrepreneurs, using the model in Equation \ref{eq:h1} from Section \ref{sec:h1}. In column 1, estimates from the baseline model suggest that a 1\% increase in local labor market vacancy rate is associated with 8\% lower revenue ($p=0.046$) by platform-based sellers. In column 2, the model includes controls for local labor market size and log wage in the founding year. In column 3, the model includes controls in all previous columns as well as log total items and log average price upon the first seller observation. In column 4, the model includes all previous controls as well as indicators for presence on external platforms and being a sole owner of the business. The coefficient estimates for the effect of vacancy rate were smaller after adding the controls, but were significantly negative with the most stringent controls (estimated effect is $-0.054$ with $p=0.068$ in column 4). All models control for state fixed effects, start year fixed effects, and seller category fixed effects.
+
+
+\begin{center}
+[ Insert Table 3 here ]
+\end{center}
+
+Figure 1 displays the kernel density plot of local labor market vacancy rate in the founding year across above-median (high) revenue sellers and below-median (low) revenue sellers. The threshold between high and low revenue seller for log quarterly revenue is 4.64. The figure shows that the relative proportion of sellers that eventually earn high (low) revenues decreases (increases) in local labor market vacancy rate in the founding year.
+
+\begin{center}
+[ Insert Figure 1 here ]
+\end{center}
+
+We note that having an external platform presence and not being a sole owner of the business are associated with significantly higher revenues. These fixed characteristics contribute to higher seller quality. To further investigate the mechanisms that drive this significant gap in performance across sellers founded in local labor markets with higher versus lower vacancy rates, we explore whether systematically different types of sellers enter the platform and become entrepreneurs with varying local labor market vacancy rates. We estimate variants of the model in Equation \ref{eq:h1} that replace the outcome variable with fixed seller characteristics such as being a sole owner of the business and being present on an external platform. Table 5 columns 1 -- 4 reports the resulting regression estimates. The estimates in column 1 suggest that a 1\% increase in local labor market vacancy rate in the founding year is associated with 0.6\% higher in probability that the seller is the sole owner of the business ($p=0.052$). In column 2, the estimates suggest that a 1\% increase in vacancy rate is associated with 1.1\% lower probability of presence on an external platform ($p=0.068$). Columns 3 and 4 show that there is no significant difference in the number of listed items or average price charged among sellers started in local labor markets with higher or lower vacancy rates.
+
+\begin{center}
+[ Insert Table 5 here ]
+\end{center}
+
+These results are consistent with the interpretation that a lower vacancy rate (or higher frictions) in the local labor market leads to the entry of relatively higher quality sellers (e.g., having business partners and presence on external platforms such as Instagram) that eventually obtain higher sales revenues from platform-based entrepreneurship. Hence, our empirical results support Hypothesis H1 stating that platform-based entrepreneurs generate higher revenues if their businesses were started at a time when local labor markets are more frictional (or have fewer available jobs as a fraction of the labor force).
+
+
+
+\section{Labor Market Frictions and the Convergence Between Entrepreneurial Performance and Local Wage}
+
+
+\subsection{Estimation Approach} \label{sec:h2}
+
+To evaluate the moderation effects of labor market vacancy rate on the relationship between local wage and platform seller's revenue performance, we estimate the model in Equation 2 below. The primary outcome variable is log quarterly revenue (in constant 2012 dollars) of seller $s$. We conduct mechanism tests by replacing the outcome variables with fixed seller characteristics such as external platform, sole owner, and initial product strategy (scope and pricing).
+\begin{eqnarray} \label{eq:h2}
+LnQrtlyRevenue_{s}= \beta_{0} + \beta_{2}LnWage_{s} + \beta_{1}VacancyRate_{s} +  \nonumber \\ \beta_{3}LnWage_{s}VacancyRate_{s}+StateFEs+StartYearFEs+X_{s}+\nu_{s}
+\end{eqnarray}
+
+The main regressor \textit{LnWage} is the overall annual wage at the time that the seller first established the business in the reported location at the state level. The interaction effect $\beta_{3}$ estimates the extent to which an increase in vacancy rate in the founding year increases the effect of local wage on quarterly seller revenue. The baseline model controls for state fixed effects, founding year fixed effects, and seller category fixed effects.
+
+We additionally assess the robustness of the estimated effects by estimating different models with additional control variables that measure labor market conditions during the founding year and fixed seller characteristics. These additional controls include log total labor force at the state level, log number of product items, log average price, and indicators for external platform and sole owner. All regression specifications cluster standard errors at the state level which defines a local labor market. 
+
+
+
+\subsection{Results}
+
+Table 3 reports the regression results from estimating the moderation effects of local labor market vacancy rate in founding year on the relationship between local wage and eventual performance of platform-based entrepreneurs. The underlying regression model is Equation \ref{eq:h2} from Section \ref{sec:h2}. Column 1 estimates a positive overall relationship between local wage in the founding year and a platform-based seller's revenue. However, the overall relationship may mask heterogeneity across locations. Starting in column 2, we include $LnWage$ and its interaction with $VacancyRate$ in the model and display estimated coefficients on these variables. The estimates show when vacancy rate is higher by 1 standard deviation (1.3\%), the effect of local wage in the founding year on the quarterly revenue of a platform-based entrepreneur becomes larger by 30\%. The baseline coefficient on local wage has a large variance and is statistically indistinguishable from zero. Also, the coefficient estimate on vacancy rate indicates a negative association between vacancy rate in founding year and eventual entrepreneurial performance, consistent with the empirical evidence in the previous section. This suggests that when vacancy rate is higher, a larger proportion of low-quality sellers enter the platform and start businesses relative to high-quality sellers, while local wage and entrepreneurial performance converge more quickly as labor market frictions become lower. 
+
+\begin{center}
+[ Insert Table 4 here ]
+\end{center}
+
+We further investigate the robustness of these estimates. In Table 4, column 3 estimates a model that includes additional controls for log total items and log average price upon the first seller observation. Column 4 includes control variables in all previous columns as well as indicators for presence on external platforms and being a sole owner of the business. The coefficient estimates on the interaction between $LnWage$ and $VacancyRate$ becomes smaller after additional controls for fixed seller characteristics, but were significantly positive with the most stringent controls (estimated coefficient is $0.151$ with $p=0.085$ in column 5). We also note that having an external platform presence and not being a sole owner of the business are associated with significantly higher revenues. These fixed characteristics contribute to higher seller quality. All models control for state fixed effects, start year fixed effects, and seller category fixed effects.
+
+In Figure 2, we split the sample by the median founding year vacancy rate (the cutoff is 3.94\%), and plot the kernel density of local wage across above-median (high) revenue sellers and below-median (low) revenue sellers for each subsample. The threshold between high and low revenue seller for log quarterly revenue is 4.64. The left panel shows that when low vacancy rate is low, the relative proportion of sellers that end up with high (low) revenues decreases (increases) in local wage in the founding year. In the right panel, the difference in the distribution in founding year local wages between high and low revenue sellers is much smaller. 
+
+\begin{center}
+[ Insert Figure 2 here ]
+\end{center}
+
+We explore whether the observed relationship between local wage and seller performance that vary across vacancy rates are driven by local labor market conditions systematically changing the types of sellers enter the platform and become entrepreneurs. In Table 5, columns 5 -- 8, we report the results from estimating variants of the model in Equation \ref{eq:h2} replacing the outcome variable with fixed seller characteristics such as being a sole owner of the business and being present on an external platform. The estimates in column 5 suggest that when vacancy rate is sufficiently high, an increase in local wage leads to significantly lower probability of being a sole owner of the business. However, there is no significant difference in the presence of an external platform, or product scope and pricing. 
+
+These results are consistent with the interpretation that the effect of local wage on seller quality among those entering the platform is more positive when vacancy rate is higher (or local labor market friction is lower). These sellers eventually obtain higher sales revenues from platform-based entrepreneurship. The evidence supports Hypothesis H2 stating that the entrepreneurial revenue and local wage in the founding year converges more when the businesses were started at a time when local labor markets are less frictional (or have more jobs available as a fraction of the labor force).
+
+
+\section{Discussion and Conclusion}
+This paper develops and tests a theory around how entrepreneurial performance outcomes on a large digital platform are shaped by frictions in the local labor market. Our results indicate that higher local labor market frictions lead to overall superior entrepreneurial performance within the same platform-based ecosystem. Lower labor market frictions are associated with more positive relationship between local wage and revenue from platform-based entrepreneurship. 
+
+We find empirical evidence supporting the hypotheses around how local labor market frictions affect performance outcomes of entrepreneurs within a platform ecosystem. Platform-based entrepreneurs systematically outperform when they start the businesses in situations where local labor market frictions are higher. Our empirical results suggest that platform-base entrepreneurial revenues decrease in state-level job vacancy rates. The association between different earnings options – from platform-based entrepreneurship and from local wage employment – becomes more positive when local labor market frictions are reduced, indicated by improved conditions for workers to find wage jobs as vacancy rate increase in the local labor market. Our paper sheds light on the mechanisms that local labor market conditions may affect sorting of skilled individuals into platform-dependent entrepreneurship. When an excess supply of high-quality labor cannot be matched to local jobs due to frictions in the wage sector, they start businesses through a platform ecosystem and outperform in revenue outcome.
+
+While past research has shown that unemployment in the local labor market causes individuals to enter platform-based labor markets as alternative income sources \citep{burtch_can_2018,huang_unemployment_2020,jackson_availability_2022,laitenberger2023unemployment}, there is a largely missing understanding of how platform-based earnings or performance outcomes are affected by local labor market conditions. Also, past studies on platform-based labor focus largely on independent contractors within a few large platforms, less attention is paid to entrepreneurial activities mediated through platform ecosystems. Our findings fill the gaps in this literature around how local labor market frictions systematically affect performance outcomes of entrepreneurial endeavors intermediated by a platform ecosystem. Our framework generates testable predictions that can be replicated on other platforms in addition to the one being studied.
+
+Our findings contribute to the literature on how regional characteristics and contexts shape entrepreneurial processes and outcomes \citep{jack_effects_2002,peer_are_2013,autio_entrepreneurial_2014,plummer_localized_2014,amezcua_organizational_2020}. Digitalization creates new contexts for entrepreneurial processes that bypass limitation of the local environments \citep{nambisan_digital_2017}. For example, platforms ecosystems can facilitate interactions across long distances, and render entrepreneurial dynamics similar across different locations. This levels the playing field for individuals in relatively poorer or disadvantaged locations \citep{stanton_who_2021,braesemann_icts_2022}. Hence, interaction between local and online ecosystems that jointly shape the sorting of individuals into different opportunities. Our results are consistent with local labor market frictions disproportionately affecting individuals with higher ability or skill levels and spurring transition into platform-dependent entrepreneurship \citep{hacamo_forced_2022}. Similar to how workers changing jobs more frequently in dense labor markets and urban areas lead to faster wage growth \citep{wheeler_cities_2006,finney_effect_2008}, our findings suggest labor market frictions can hinder efficiency of matches between individuals and earnings opportunities in a location, and hence significantly moderate the relationship between local wage and platform-based entrepreneurial revenue.
+
+Our results are also relevant to strategic human capital research, specifically focusing on the effects of labor market frictions on strategic entrepreneurship \citep{campbell_rethinking_2012,mahoney_market_2013,campbell_bridging_2017,starr_strategic_2018}. While prior literature studied factors affecting entrepreneurial transitions at the level of the individual \citep{roach_founder_2015}, organization \citep{carnahan_heterogeneity_2012}, and industry \citep{ozcan_transition_2009}, we shed light on \textit{market-level} mechanisms that are equally important in contributing to systematic differences in entrepreneurial outcomes. We reveal labor market frictions as a significant source of superior performance when entrepreneurial processes are embedded within a digital platform ecosystems.
+
+From a policy perspective, local employers and government agencies may consider supporting platform-based entrepreneurial activities, which can allow individuals constrained by lack of opportunitites in the local labor market to develop alternative sources of earnings. By leveraging digital platforms, policy makers can orchestrate economic development opportunities for workers in distressed areas, and allow them to benefit from digital affordances and overcome local constraints.
+
+From a managerial perspective, our findings show that entrepreneurial individuals can use digital platforms to overcome local constraints and obtain superior business performance. Entrepreneurs from locations with scarcer local labor market opportunities who started businesses in a platform-based ecosystem can sustain a revenue premium. This implies that individuals constrained by local labor market frictions may utilize digital platforms to overcome constraints due to the scarcity of local opportunities that lead to inefficient matching between skills and wage jobs, and outperform in revenue outcomes indicating that pursuing entrepreneurial opportunities enabled by digital platforms may be a worthwhile pathway despite local frictions.
+
+
+
+
+
+
+
+%Given the observation nature of the data, we cannot identify a causal effect of local wage on entrepreneurial performance in the platform ecosystem, and how this effect may depend on the level of labor market frictions across different locations. While our hypothesized mechanism is consistent with a causal effect, we cannot pin down the extent to which raising local wages within the same location leads to an increase in the average PDE earnings in the focal platform marketplace. Future work can explore changes in regulations (such as non-compete agreements or minimum wages) that induce exogenous variation in some states over time, and examine how individuals’ performance outcomes and transitions into and out of PDE respond to such changes.
+%Second, different locations may have systematically different demographic profiles. For example, rural residents may migrate into cities and denser labor markets precisely to take advantage of less frictional labor markets in these locations. That is, location is not entirely fixed at the individual level, especially in the long run when individuals can move out of their current location of residence and choose where they live and work. However, it is more likely for younger workers in smaller households to sort into locations that maximize their labor earnings and productivity. Future work can explore how demographic characteristics account for differentials in PDE earnings and their interactions with local labor market frictions.
+
+\singlespacing
+\bibliography{etsylabor.bib}
+
+
+\input{graph_and_table_v2.tex}
+
+\appendix
+
+\section{Analytical Model of Entrepreneurial Choice}
+
+Assume there is one time period with realized outcomes without uncertainty. The model also mutes the intensive margin of labor supply (which assumes that individuals have one unit of available labor, which they spent either on a wage job or entrepreneurial business). 
+
+The probability of job match after search is $\mu$, and the local wage is $w$. A fraction $\alpha$ of the population are high ability types $H$, and the rest are low ability types $L$. Whether the individual $i$ is matched to a job after search is indicated by $s_{i}$ which is a binary variable. Whether the individual $i$ becomes an entrepreneur eventually (regardless of job match outcome) is indicated by $d_{i}$ which is a binary variable. The entrepreneurial outcomes of ability types high and low have expected values of $y^{H}$ and $y^{L}$, respectively. The individual level entrepreneurial revenue for high ability type is distributed normally with variance $\sigma^{2}$, thus $y_{i}^{H}\sim N(y^{H},\sigma^{2})$.
+
+\subsection{Deriving the Expected Entrepreneurial Revenue Among Entrants}
+Based on the model setup, we can derive the proportion of the overall population that engages in entrepreneurship as follows.
+\begin{eqnarray}
+    Pr\left(d_{i}=1\right) &=& 1-\alpha + \alpha \left(1-\mu+\mu Pr\left(y^{H}_{i}\geq w\right) \right) \\
+    &=& 1-\alpha\mu Pr(y^{H}_{i}<w)
+\end{eqnarray}
+
+
+%\begin{eqnarray}
+%Pr(d_{i}=1) &=& Pr\left(y^{H}_{i}\geq w\right)\alpha\mu + \alpha(1-\mu) + 1-\alpha \\
+%&=& \left(1-\Phi\left(\frac{w-y^{H}}{\sigma}\right)\right)\alpha\mu + 1 - \alpha\mu \\
+%&=& 1-\Phi\left(\frac{w-y^{H}}{\sigma}\right)\alpha\mu
+%\end{eqnarray}
+
+There are three separate scenarios for observed entrants.
+
+\begin{itemize}
+\item \textbf{Scenario \#1: $\theta_{i}=L$.} The probability of entry and expected revenue can be calculated as follows.
+\end{itemize}
+\begin{eqnarray}
+Pr\left(\theta_{i}=L\vert d_{i}=1\right) &=& \frac{Pr\left(d_{i}=1\vert \theta_{i}=\L\right)Pr\left(\theta_{i}=L\right)}{Pr(d_{i}=1)} \\
+&=& \frac{1-\alpha}{Pr(d_{i}=1)}
+\end{eqnarray}
+
+\begin{eqnarray}
+E\left[y^{L}_{i}\vert \theta_{i}=L,d_{i}=1\right] &=& y^{L}
+\end{eqnarray}
+%Thus 
+%$$Pr\left(\theta_{i}=L\vert d_{i}=1\right)E\left[y^{L}_{i}\vert \theta_{i}=L,d_{i}=1\right] = \frac{1-\alpha}{Pr(d_{i}=1)}y^{L}$$
+
+
+\begin{itemize}
+\item \textbf{Scenario \#2: $\theta_{i}=H, s_{i}=0$.} The probability of entry and expected revenue can be calculated as follows.
+\end{itemize}
+\begin{eqnarray}
+Pr\left(\theta_{i}=H,s_{i}=0\vert d_{i}=1\right) &=& \frac{Pr\left(d_{i}=1\vert \theta_{i}=H,s_{i}=0\right)Pr\left(\theta_{i}=H,s_{i}=0\right)}{Pr(d_{i}=1)} \\
+&=& \frac{\alpha(1-\mu)}{Pr(d_{i}=1)}
+\end{eqnarray}
+
+\begin{eqnarray}
+E\left[y^{H}_{i}\vert \theta_{i}=H,s_{i}=0,d_{i}=1\right] &=& y^{H}
+\end{eqnarray}
+
+%Thus 
+%$$Pr\left(\theta_{i}=H,s_{i}=0\vert d_{i}=1\right)E\left[y^{H}_{i}\vert \theta_{i}=H,s_{i}=0,d_{i}=1\right] = \frac{\alpha(1-\mu)}{Pr(d_{i}=1)}y^{H} $$
+
+
+
+\begin{itemize}
+\item \textbf{Scenario \#3: $\theta_{i}=H, s_{i}=1$.} The probability of entry and expected revenue can be calculated as follows.
+\end{itemize}
+\begin{eqnarray}
+Pr\left(\theta_{i}=H,s_{i}=1\vert d_{i}=1\right) &=& \frac{Pr\left(d_{i}=1\vert \theta_{i}=H,s_{i}=1\right)Pr\left(\theta_{i}=H,s_{i}=1\right)}{Pr(d_{i}=1)} \\
+&=& \frac{Pr\left(y^{H}_{i}\geq w\right)\alpha\mu}{Pr(d_{i}=1)} \\
+&=& \frac{\left(1-\Phi\left(\frac{w-y^{H}}{\sigma}\right)\right)\alpha\mu}{Pr(d_{i}=1)}
+\end{eqnarray}
+
+\begin{eqnarray}
+E\left[y^{H}_{i}\vert \theta_{i}=H,s_{i}=1,d_{i}=1\right] &=& E\left[y^{H}_{i}\vert y^{H}_{i}\geq w\right] \\
+&=& y^{H} + \sigma\frac{\phi\left(\frac{w-y^{H}}{\sigma}\right)}{1-\Phi\left(\frac{w-y^{H}}{\sigma}\right)}
+\end{eqnarray}
+
+%Thus 
+%\begin{eqnarray*}
+%    Pr\left(\theta_{i}=H,s_{i}=1\vert d_{i}=1\right)E\left[y^{H}_{i}\vert \theta_{i}=H,s_{i}=1,d_{i}=1\right] &=& \frac{\left(1-\Phi\left(\frac{w-y^{H}}{\sigma}\right)\right)\alpha\mu}{Pr(d_{i}=1)}\left(y^{H} + \sigma\frac{\phi\left(\frac{w-y^{H}}{\sigma}\right)}{1-\Phi\left(\frac{w-y^{H}}{\sigma}\right)}\right) \\
+%    &=&\frac{\left(1-\Phi\left(\frac{w-y^{H}}{\sigma}\right)\right)\alpha\mu y^{H}+\alpha\mu\sigma\phi\left(\frac{w-y^{H}}{\sigma}\right)}{Pr(d_{i}=1)}
+%\end{eqnarray*}
+
+
+Let $\phi(z)$ and $\Phi(z)$ denote the probability density function and cumulative distribution function of the standard normal random variable $z\sim N(0,1)$. We can show that the overall expected entrepreneurial revenue conditional on entry ($d_{i}=1$) is as follows. 
+
+\begin{eqnarray}
+    E[y_{i}\vert d_{i}=1] &=& \frac{\left(1-\Phi\left(\frac{w-y^{H}}{\sigma}\right)\right)\alpha\mu y^{H}+\alpha\mu\sigma\phi\left(\frac{w-y^{H}}{\sigma}\right)+\alpha(1-\mu)y^{H}+(1-\alpha)y^{L}}{1-\Phi\left(\frac{w-y^{H}}{\sigma}\right)\alpha\mu} \\
+    &=& y^{H}-\frac{(1-\alpha)(y^{H}-y^{L})-\alpha\mu\sigma\phi\left(\frac{w-y^{H}}{\sigma}\right)}{1-\Phi\left(\frac{w-y^{H}}{\sigma}\right)\alpha\mu}
+\end{eqnarray}
+%    &=& y^{H}+\frac{(\alpha-1)y^{H}+(1-\alpha)y^{L}+\alpha\mu\sigma\phi\left(\frac{w-y^{H}}{\sigma}\right)}{1-\Phi\left(\frac{w-y^{H}}{\sigma}\right)\alpha\mu} \\
+
+
+
+\section{Proof of Proposition \ref{prop:h1}}
+
+
+It is straightforward to show that 
+\begin{equation}
+    \bar{y}_{\mu}'(w,\mu) = \frac{\partial E\left[y_{i}\vert d_{i}=1\right]}{\partial\mu} = \frac{\alpha\left(\sigma\phi\left(\frac{w-y^{H}}{\sigma}\right)-(1-\alpha)(y^{H}-y^{L})\Phi\left(\frac{w-y^{H}}{\sigma}\right)\right)}{\left(1-\Phi\left(\frac{w-y^{H}}{\sigma}\right)\alpha\mu\right)^{2}}
+\end{equation}
+
+$y^{H}-y^{L}$ is strictly positive by definition. Note that both $\phi(z)$ and $\Phi(z)$ are decreasing in $z$ when $z\geq 0$. Therefore, $\bar{y}_{\mu}'(w,\mu)$ decreases when $w$ increases whenever $w\geq y^{H}$. Also note that this outcome is negative when $w\to\infty$. Hence, there must exist a threshold $w^{*}$ such that whenever local wage $w$ is at least $w^{*}$, it follows that $\bar{y}_{\mu}'(w,\mu)$ must be negative. Next, we show that this threshold wage $w^{*}$ is relatively small (no greater than $y^{H}$) when the entrepreneurial performance gap between high and low ability types is sufficiently large.
+
+Note that $\phi\left(\frac{w-y^{H}}{\sigma}\right)$ is bounded above by $\phi(0)$. Therefore, when the expected performance gap between high and low ability types $\Delta\bar{y}=y^{H}-y^{L}$ satisfies $\Delta\bar{y}> \frac{2\sigma\phi(0)}{1-\alpha}$, it follows that $\bar{y}_{\mu}'(w,\mu)$ must be negative whenever $w\geq y^{H}$. Thus, we have shown that the threshold wage $w^{*}$ at which the outcome becomes negative must be no larger than $y^{H}$. This concludes the proof of Proposition \ref{prop:h1}.
+
+\section{Proof of Proposition \ref{prop:h2}}
+
+Denote $M_1(w) = -\frac{(1-\alpha)(y^{H}-y^{L})}{1-\Phi\left(\frac{w-y^{H}}{\sigma}\right)\alpha\mu}$ and $M_2(w) = \frac{\alpha\mu\sigma\phi\left(\frac{w-y^{H}}{\sigma}\right)}{1-\Phi\left(\frac{w-y^{H}}{\sigma}\right)\alpha\mu}$. Then we can write expected entrepreneurial performance as
+\begin{eqnarray}
+E\left[y_{i}\vert d_{i}=1\right] &=& y^{H} + M_1(w) + M_2(w)
+\end{eqnarray}
+
+Thus we can show that
+\begin{eqnarray}
+    \frac{\partial M_1(w)}{\partial w} &=& -\frac{\alpha\mu\phi\left(\frac{w-y^{H}}{\sigma}\right)\frac{1}{\sigma}(1-\alpha)(y^{H}-y^{L})}{\left[1-\Phi\left(\frac{w-y^{H}}{\sigma}\right)\alpha\mu\right]^{2}}
+\end{eqnarray}
+\begin{eqnarray}
+    \frac{\partial M_2(w)}{\partial w} &=& \frac{\alpha\mu\phi\left(\frac{w-y^{H}}{\sigma}\right)\left(-\frac{w-y^{H}}{\sigma}\left(1-\Phi\left(\frac{w-y^{H}}{\sigma}\right)\alpha\mu\right)+\phi\left(\frac{w-y^{H}}{\sigma}\right)\alpha\mu\right)}{\left[1-\Phi\left(\frac{w-y^{H}}{\sigma}\right)\alpha\mu\right]^{2}}
+\end{eqnarray}
+
+We can characterize the relationship between local wage $w$ and expected revenue among platform-based entrepreneurs as follows. Denote
+$$\xi(w,\mu) = -\frac{1}{\sigma}(1-\alpha)(y^{H}-y^{L})-\frac{w-y^{H}}{\sigma}\left(1-\Phi\left(\frac{w-y^{H}}{\sigma}\right)\alpha\mu\right)+\phi\left(\frac{w-y^{H}}{\sigma}\right)\alpha\mu$$
+
+Then
+\begin{equation}
+\bar{y}_{w}'(w,\mu) = \frac{\partial E\left[y_{i}\vert d_{i}=1\right]}{\partial w} = \frac{\partial M_{1}(w)}{\partial w} + \frac{\partial M_{2}(w)}{\partial w}= \frac{\alpha\mu\phi\left(\frac{w-y^{H}}{\sigma}\right)\xi(w,\mu)}{\left[1-\Phi\left(\frac{w-y^{H}}{\sigma}\right)\alpha\mu\right]^{2}}
+\end{equation}
+
+%Denote $z=\frac{w-y^{H}}{\sigma}$. Then
+%$\xi(z,\mu)=-\frac{1}{\sigma}(1-\alpha)(y^{H}-y^{L})-z\left(1-\phi(z)\alpha\mu\right)+\phi(z)\alpha\mu$
+%Solve for $z^{*}$ such that $\xi(z^{*},\mu)=0$ and $\xi(z,\mu)\leq 0$ whenever $z\geq z^{*}$. 
+
+
+Since $\alpha,\mu<1$, clearly the denominator is always positive and decreases in $\mu$ because $0<\Phi(\frac{w-y^{H}}{\sigma})<1$ for all $w$. Also $\xi(w,\mu)$ increases in $\mu$ whenever $w\geq y^{H}$ because
+
+$$\xi'_{\mu}(w,\mu)=\frac{w-y^{H}}{\sigma}\Phi\left(\frac{w-y^{H}}{\sigma}\right)\alpha+\phi\left(\frac{w-y^{H}}{\sigma}\right)\alpha>0$$
+
+Therefore, there exists a threshold $w^{*}<y^{H}$ such that whenever $w\geq w^{*}$, it follows that $\bar{y}_{w}'(w,\mu)$ increases in $\mu$ increases in $\mu$. This concludes the proof of Proposition \ref{prop:h2}.
+
+
+%\begin{proposition}
+%    Then there exists a threshold wage $\underline{w}$ such that whenever $w\geq \underline{w}$, an increase in prevailing local wage leads to a decline in observed average entrepreneurial performance; whenever $w< \underline{w}$, an increase in prevailing local wage leads to an increase in observed average entrepreneurial performance
+%\end{proposition}
+%\begin{lemma}
+%    The threshold \underline{w} increases in $\mu$.
+%\end{lemma}
+
+%When $w=y^{H}$,
+%\begin{eqnarray}
+%    \frac{\partial M(w)}{\partial w}\Big|_{w=y^{H}} &=& \frac{\partial M_1(w)}{\partial w} + \frac{\partial M_2(w)}{\partial w}\Big|_{w=y^{H}} \\
+%    &=& \frac{\alpha\mu^2\phi(0)}{\left(1-0.5\alpha\mu\right)} \left(-\frac{1}{\sigma}(1-\alpha)(y^{H}-y^{L})+\phi(0)\alpha\mu\right)
+%\end{eqnarray}
+
+%When $\Delta y=y^{H}-y^{L}$ is sufficiently large, then the above is strictly negative. Hence,
+
+%\begin{lemma}
+%    When $\Delta y=y^{H}-y^{L}$ is sufficiently large, the threshold $\underline{w}$ is less than $y_{H}$.
+%\end{lemma}
+
+
+\end{document}

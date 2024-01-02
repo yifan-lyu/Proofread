@@ -1,0 +1,51 @@
+\ProvidesPackage{preamble}
+
+\usepackage[utf8]{inputenc}
+\usepackage{natbib}
+\usepackage{CJKutf8} %enable chinese
+\usepackage[T1]{fontenc} %allowing the sign > and < in table with T1 font encoding
+\usepackage{booktabs, multicol, multirow} %allowing excel2latex to produce table
+\usepackage{float} % allow to place picture at certain place
+\usepackage{xcolor} %Add color, \textcolor{blue}{text here}
+\usepackage{graphicx} %allow you to insert pic
+\usepackage[toc,page]{appendix} %allow appendix
+\usepackage[a4paper,left=1.5cm,right=1.5cm,top=2.5cm,bottom=2.5cm]{geometry}
+\usepackage{subfiles} %Allowing master tex and sub tex
+\bibliographystyle{agsm} %Harvard Style
+%\renewcommand{\baselinestretch}{1.15} % control for line spacing
+\setlength{\parindent}{2em} %control for space before a paragraph
+\setlength{\parskip}{0em} % control for space in new paragraph
+\providecommand{\keywords}[1]{\small{\scshape Keywords:} #1}
+\providecommand{\JELcode}[1]{\small{\scshape JEL codes:} #1}
+
+\definecolor{airforceblue}{rgb}{0.36, 0.54, 0.66}
+\definecolor{brickred}{rgb}{0.8, 0.25, 0.33}
+\definecolor{bluepigment}{rgb}{0.2, 0.2, 0.6}
+\usepackage[colorlinks,linkcolor=brickred,citecolor=blue,urlcolor=airforceblue,bookmarks=false,hypertexnames=true]{hyperref} %generate hyperlink
+\renewcommand{\contentsname}{\centering Table of Content} %Title of the content
+\usepackage{datetime}
+\newdateformat{monthyeardate}{%
+  \monthname[\THEMONTH], \THEYEAR}
+
+
+\tolerance 1400 %inserts breakpoints allowing white space to stretch and penalties to be taken, so long as the badness keeps below this threshold. Without this, box will be overfull
+\emergencystretch 1.5em %if TeX cannot set the paragraph below the \tolerance badness, but rather than make overfull boxes it tries an extra pass "pretending" that every line has an additional \emergencystretch of stretchable glue.
+\hfuzz 0.3pt %specifies the amount by which the content in an \hbox can exceed the width of that \hbox before being considered overfull.
+\vfuzz 0.75pt %specifies the amount by which the content in a \vbox can exceed the height of that \vbox before being reported as overfull.
+\widowpenalty=10000  %set to 150 is mild, 10000 is to forbit a single line at the top of the page
+\clubpenalty=10000 %forbit a singple line at the bottom of the page (orphan)
+
+
+\usepackage[numbered,framed]{matlab-prettifier}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{titlesec} % change the font size of sections
+
+\titleformat*{\section}{\large\bfseries}
+\titleformat*{\subsection}{\normalsize\bfseries}
+\titleformat*{\subsubsection}{\normalsize\bfseries}
+
+\renewcommand*\appendixpagename{\tiny } %hide the default appendices
+
+
+
+

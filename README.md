@@ -1,7 +1,5 @@
 # Proofread
 
-h1
+This folder stores the proposal for proofreading/later editing.
 
-h2
-
-This folder stores the draft used for proof reading. Use github to review all the changes being made 2
+A git version is saved for every progress made
